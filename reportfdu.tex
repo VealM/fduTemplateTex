@@ -1,0 +1,167 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+%                                  ---by suchot
+
+\documentclass[AutoFakeBold]{fdureport}
+
+%\usepackage{graphicx}
+%\usepackage{subfigure}
+\begin{document}
+%=====%
+%
+%封皮页填写内容
+%
+%=====%
+
+% 标题样式 使用 \title{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \title{{第一行}},  
+% 	      长标题 \title{{第一行}{第二行}}
+%             超长标题\tiitle{{第一行}{...}{第N行}}
+
+\title{{工作报告}}
+
+
+
+% 标题样式 使用 \entitle{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \entitle{{First row}},  
+% 	      长标题 \entitle{{First row}{ Second row}}
+%             超长标题\entitle{{First row}{...}{ Next N row}}
+% 注意：  英文标题多行时 需要在开头加个空格 防止摘要标题处英语单词粘连。
+\entitle{{Report}}
+
+\author{似然}
+\major{应用数学}
+\advisor{似然}
+\college{类脑智能科学与技术学院}
+\grade{2020级}
+
+
+
+\maketitle
+\frontmatter
+
+%英文摘要
+%\EnAbstract{Fudan University was established in 1905 as Fudan Public School. It was the first institution of higher education to be founded by a Chinese person. The two characters, fù (“return”) and dàn (“dawn”) were borrowed from A Commentary on The Classic of History, of which the part on the Yu and the Xia dynasties mentions: “Brilliant are the sunshine and moonlight, again the morning radiance returns at dawn.” In 1917, the institution was renamed Fudan University, which has been kept ever since.  
+%}{FDU, key university，outstanding}
+%中文摘要
+%\ZhAbstract{复旦大学，位于上海市，是中华人民共和国教育部直属、中央直管副部级建制的全国重点大学，世界一流大学建设高校（A类），国家“985工程”、“211工程”重点建设高校，入选国家“珠峰计划”、“强基计划”、“111计划”、“2011计划”、卓越医生教育培养计划、卓越法律人才教育培养计划、国家建设高水平大学公派研究生项目、新工科研究与实践项目、中国政府奖学金来华留学生接收院校、全国首批深化创新创业教育改革示范高校、首批学位授权自主审核单位，九校联盟、环太平洋大学联盟、中国大学校长联谊会、东亚研究型大学协会、新工科教育国际联盟、医学“双一流”建设联盟、长三角研究型大学联盟、 长三角高校智库联盟创始成员，中国大学智库论坛秘书处单位，是一所国内顶尖的综合性研究型大学。
+%}{复旦大学，重点大学，双一流}
+%=======%
+%插入引言
+%=======%
+
+
+
+%生成目录
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents
+%插入图或表的目录
+
+\renewcommand\listfigurename{插\ 图\ 目\ 录}
+\renewcommand\listtablename{表\ 格\ 目\ 录}
+\addtocontents{lof}{\protect\thispagestyle{empty}}
+\listoffigures
+%\thispagestyle{empty}
+%\newpage
+\addtocontents{lot}{\protect\thispagestyle{empty}}
+\listoftables
+%\thispagestyle{empty}
+%\newpage
+%文章主体
+\mainmatter
+
+\Intro
+这里是工作总述部分
+
+
+\chapter{研究背景}
+\section{二级标题}
+\subsection{三级标题}
+\par \textbf{章节引用}示例，参见python代码见附录\ref{sec:code}
+\par 听说\textbf{数学公式}输入好南
+
+\begin{equation}
+\begin{aligned}
+\mathrm{KL}(p \| q) &=-\int p(\boldsymbol{x}) \ln q(\boldsymbol{x}) \mathrm{d} \boldsymbol{x}-\left(-\int p(\boldsymbol{x}) \ln p(\boldsymbol{x}) \mathrm{d} \boldsymbol{x}\right) \\
+&=-\int p(\boldsymbol{x}) \ln \left\{\frac{q(\boldsymbol{x})}{p(\boldsymbol{x})}\right\} \mathrm{d} \boldsymbol{x}
+\end{aligned}
+\label{eq:KL}
+\end{equation}
+
+\par 引用KL散度公式，见公式\ref{eq:KL}。
+
+\par 对于公式输入，我选择使用OCR识别，推荐一个小工具\href{https://accounts.mathpix.com/signup?referral_code=8ZTrrDwYv3}{Mathpix}(点击文档中的\href{https://accounts.mathpix.com/signup?referral_code=8ZTrrDwYv3}{Mathpix})
+
+\par 听说\textbf{表格输入}也不太简单。学位论文通常使用三线表
+\begin{table}[htbp] 
+	\centering	
+	\begin{tabular}{lcl} 
+		\toprule 
+		性别 & 身高 & 体重 \\ 
+		\midrule 
+		 女 & 165 & 60 \\ 
+	     男 & 175 & 70 \\ 
+		 女 & 161 & 55 \\ 
+		\bottomrule 
+	\end{tabular} 
+\caption{\label{tab:test}示例表格} 
+\end{table}
+\par 听说你想\textbf{并排插入图像}
+\begin{figure}[H]
+	\begin{minipage}[t]{0.5\textwidth}
+	\centering
+	\tiny 图片1 \\
+	\vspace{0.5cm}
+	\includegraphics[scale=0.05]{anime.jpg}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	\centering 
+	\tiny 图片2 \\
+	\vspace{0.5cm}
+	\includegraphics[scale=0.05]{anime.jpg}  
+\end{minipage}	
+\protect\caption{两张图并排 \label {fig:two-pics}}	
+\end{figure}
+
+\par 重要的事强调三遍，详细内容见ReadMe(求你，一定要看) \\
+{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX \\
+{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX \\
+{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX
+\chapter{研究方法}
+\par 再多我也不会了，请学会正确使用搜索引擎。
+\par 我适配的附录代码是python，可修改language选项适配其他语言。
+
+\begin{lstlisting}[language = python]
+print("hello world!")
+
+\end{lstlisting}
+
+\chapter{研究结果}
+
+\chapter{总结与讨论}
+
+%论文后部
+\backmatter
+
+
+%=======%
+%引入参考文献文件
+%=======%
+\bibdatabase{bib/database}%bib文件名称 仅修改bib/ 后部分
+\printbib
+
+
+
+
+\Appendix
+\section{python代码}
+\label{sec:code}
+
+
+这里是附录页，附上你的程序或必要的相关知识\cite{partl2016}
+
+{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX
+
+
+
+\end{document}
