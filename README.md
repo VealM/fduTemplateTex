@@ -8,13 +8,21 @@
 
 课程设计涉及到的主要文件(按依赖关系由上而下)：
 -- classthesis/(根目录)
+
 --- FDU.cfg    % 预定义文件
+
 --- fdubib.bst % bib版式
+
 --- bib/database.bib % 导入bibtex
+
 --- fduthesis.cls % tex版式文件
+
 --- figures/ % 图片文件夹
+
 --- classfdu.tex % tex文件
+
 --- classfdu.pdf % tex编译后生成的pdf文件
+
 
 如果刚刚入门latex，那么你仅对database.bib, classfdu.tex与figures/文件夹有可读可写权限，其余文件仅可读，不慎修改可能导致不可控的错误。
 
