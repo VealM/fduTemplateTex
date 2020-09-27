@@ -30,14 +30,23 @@
 
 课程设计涉及到的主要文件(按依赖关系由上而下)：
 
+
 -- reportthesis/(根目录)
+
 --- RFDU.cfg    % 预定义文件
+
 --- fdubib.bst % bib版式
+
 --- bib/database.bib % 导入bibtex
+
 --- fdureport.cls % tex版式文件
+
 --- figures/ % 图片文件夹
+
 --- reportfdu.tex % tex文件
+
 --- reportfdu.pdf % tex编译后生成的pdf文件
+
 
 如果刚刚入门latex，那么你仅对database.bib, reportfdu.tex与figures/文件夹有可读可写权限，其余文件仅可读，不慎修改可能导致不可控的错误。
 
